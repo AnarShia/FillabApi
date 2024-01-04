@@ -4,7 +4,8 @@ import (
 	"gorm.io/gorm"
 )
 
-type Fact struct {
+type User struct {
 	gorm.Model
-	Content string `json:"content" gorm:"not null"`
+	ID       int    `json:"id"`
+	Username string `json:"username"`
 }

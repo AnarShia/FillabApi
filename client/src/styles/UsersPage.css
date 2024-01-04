@@ -1,0 +1,43 @@
+
+.users-page-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.5em 0;
+    width: 100%;
+  }
+  
+  .list-item-span {
+    font-size: 1.5em;
+    color: #b2a0d5;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .list-item-btn {
+    color: #cb7070;
+    margin: 10px;
+  }
+  
+    .users-page-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    } 
+  .input{
+    width: 100%;
+    margin: 12px;
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  

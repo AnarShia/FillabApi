@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/AnarShia/FillabApi/models"
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 )
@@ -17,26 +17,23 @@ type Dbinstance struct {
 
 var Db Dbinstance
 
-func ConnectDb() {
-	dsn := fmt.Sprintf("host=db user=%s password=%s dbname=%s port=5432 sslmode=disable",
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
-		os.Getenv("DB_NAME"))
+func ConnectDbSqlite() {
 
-	db, error := gorm.Open(postgres.Open(dsn), &gorm.Config{
-		Logger: logger.Default.LogMode(logger.Info),
-	})
+	fmt.Println("Connecting to database...")
+	db, error := gorm.Open(sqlite.Open("Fillab_AnarShia.db"), &gorm.Config{})
 	if error != nil {
 		log.Fatal("Failed to connect to database!. \n", error)
 		os.Exit(2)
 	}
+
 	log.Println("Connected to database!")
 	db.Logger = db.Logger.LogMode(logger.Info)
 
 	log.Println("Migrating database...")
-	db.AutoMigrate(&models.Fact{})
+	db.AutoMigrate(&models.User{})
 
 	Db = Dbinstance{
 		Db: db,
 	}
+
 }
