@@ -14,6 +14,7 @@ Node.js
 GO
 
 
+
 ### Installation
 
 A step by step series of examples that tell you how to get a development environment running.
@@ -24,6 +25,7 @@ A step by step series of examples that tell you how to get a development environ
 
 2. Run the client:
     - Navigate to the `./client` directory.
+    - Install npm
     - Run the command `npm run dev`.
 
 ## Built With
